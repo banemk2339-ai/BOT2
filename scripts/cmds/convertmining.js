@@ -1,8 +1,39 @@
+// ── Resource definitions — synced exactly from mine.js ──────────────────────
+const RESOURCES = {
+  // Ultra Rare
+  rhodium:   { name: "Rhodium",   emoji: "⚪", unit: "g",  rarity: "ultra",    valuePerGram: 15000 },
+  platinum:  { name: "Platinum",  emoji: "⚪", unit: "g",  rarity: "ultra",    valuePerGram: 12000 },
+  gold:      { name: "Gold",      emoji: "🥇", unit: "g",  rarity: "ultra",    valuePerGram: 10000 },
+  diamond:   { name: "Diamond",   emoji: "💎", unit: "ct", rarity: "ultra",    valuePerGram: 50000 },
+  emerald:   { name: "Emerald",   emoji: "💚", unit: "ct", rarity: "ultra",    valuePerGram: 40000 },
+  ruby:      { name: "Ruby",      emoji: "❤️", unit: "ct", rarity: "ultra",    valuePerGram: 35000 },
+  // Rare
+  palladium: { name: "Palladium", emoji: "⚪", unit: "g",  rarity: "rare",     valuePerGram: 8000  },
+  iridium:   { name: "Iridium",   emoji: "⚪", unit: "g",  rarity: "rare",     valuePerGram: 7000  },
+  osmium:    { name: "Osmium",    emoji: "🔵", unit: "g",  rarity: "rare",     valuePerGram: 6000  },
+  sapphire:  { name: "Sapphire",  emoji: "💙", unit: "ct", rarity: "rare",     valuePerGram: 30000 },
+  // Uncommon
+  rhenium:   { name: "Rhenium",   emoji: "⚪", unit: "g",  rarity: "uncommon", valuePerGram: 5000  },
+  ruthenium: { name: "Ruthenium", emoji: "⚪", unit: "g",  rarity: "uncommon", valuePerGram: 4500  },
+  silver:    { name: "Silver",    emoji: "⚪", unit: "g",  rarity: "uncommon", valuePerGram: 1000  },
+  // Common
+  lithium:   { name: "Lithium",   emoji: "⚪", unit: "kg", rarity: "common",   valuePerGram: 150   },
+  cobalt:    { name: "Cobalt",    emoji: "🔵", unit: "kg", rarity: "common",   valuePerGram: 120   },
+  titanium:  { name: "Titanium",  emoji: "⚪", unit: "kg", rarity: "common",   valuePerGram: 100   },
+  tungsten:  { name: "Tungsten",  emoji: "⚫", unit: "kg", rarity: "common",   valuePerGram: 90    },
+  copper:    { name: "Copper",    emoji: "🟤", unit: "kg", rarity: "common",   valuePerGram: 80    },
+  nickel:    { name: "Nickel",    emoji: "⚪", unit: "kg", rarity: "common",   valuePerGram: 75    },
+};
+// ─────────────────────────────────────────────────────────────────────────────
+
+// Tracks users who have opened the convert menu and are awaiting a reply
+const pendingConvert = new Map();
+
 module.exports = {
   config: {
     name: "convertmining",
     aliases: ["sellore", "sellmining", "convertore"],
-    version: "1.0",
+    version: "1.1",
     author: "Charles MK",
     countDown: 5,
     role: 0,
@@ -135,7 +166,7 @@ module.exports = {
 
       userData.money = (userData.money || 0) + totalConverted;
       userData.data.mining = miningData;
-      await usersData.set(senderID, { money: userData.money, data: userData.data });
+      await usersData.set(senderID, { ...userData, money: userData.money, data: userData.data });
 
       return message.reply(
         `✅ 𝗔𝗟𝗟 𝗖𝗢𝗡𝗩𝗘𝗥𝗧𝗘𝗗!\n`
@@ -167,7 +198,7 @@ module.exports = {
       const count = miningData.goldStones;
       miningData.goldStones = 0;
       userData.data.mining = miningData;
-      await usersData.set(senderID, { money: userData.money, data: userData.data });
+      await usersData.set(senderID, { ...userData, money: userData.money, data: userData.data });
 
       return message.reply(
         `✅ 𝗖𝗢𝗡𝗩𝗘𝗥𝗧𝗘𝗗!\n`
@@ -190,7 +221,7 @@ module.exports = {
     userData.money = (userData.money || 0) + value;
     miningData.resources[item.id] = 0;
     userData.data.mining = miningData;
-    await usersData.set(senderID, { money: userData.money, data: userData.data });
+    await usersData.set(senderID, { ...userData, money: userData.money, data: userData.data });
 
     return message.reply(
       `✅ 𝗖𝗢𝗡𝗩𝗘𝗥𝗧𝗘𝗗!\n`

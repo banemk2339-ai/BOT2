@@ -41,7 +41,7 @@
     "value": "v1%3B694x360x2",
     "domain": ".facebook.com",
     "path": "/",
-    "expires": 1781098385,
+    "expires": 1781101758,
     "httpOnly": false,
     "secure": true,
     "sameSite": "Lax"
@@ -60,28 +60,10 @@
     "value": "61585105709390%3AF1PctaSdry%2C61579115638015%3Ao2UcklRQXy%2C100062530337681%3AzkqU158bTj%2C100053043793229%3Al0PhBwqSkF%2C61575411856095%3AX4RB4og9oF%2C61587105579960%3AkRliyMJAnt%2C61573475800099%3AiB8a0qbqv6",
     "domain": ".facebook.com",
     "path": "/",
-    "expires": 1810474383.088393,
+    "expires": 1810477756.597505,
     "httpOnly": true,
     "secure": true,
     "sameSite": "Lax"
-  },
-  {
-    "name": "m_pixel_ratio",
-    "value": "2",
-    "domain": ".facebook.com",
-    "path": "/",
-    "expires": -1,
-    "httpOnly": false,
-    "secure": true
-  },
-  {
-    "name": "wd",
-    "value": "360x780",
-    "domain": ".facebook.com",
-    "path": "/",
-    "expires": -1,
-    "httpOnly": false,
-    "secure": true
   },
   {
     "name": "c_user",
@@ -103,29 +85,29 @@
   },
   {
     "name": "fr",
-    "value": "0ez7ZFzMlvZZULKtw.AWf9LOn7AGHD44AE9ErVlgy74zgYFLirIaebDiFqvAjIdcmLrHQ.Bptque..AAA.0.0.Bp2k2Q.AWe9l6-trB76OEaiZxlAuV2cWTM",
+    "value": "0ez7ZFzMlvZZULKtw.AWd9-H8P5emXgpFqA4H2zElztABJ_NCo0Z5gO1CpyY6GKnLVyB4.Bptque..AAA.0.0.Bp2lq9.AWer-BfLft-VdE6QTB-a7e4ijIQ",
     "domain": ".facebook.com",
     "path": "/",
-    "expires": 1783690383.088172,
+    "expires": 1783693756.596876,
     "httpOnly": true,
     "secure": true
   },
   {
     "name": "fbl_st",
-    "value": "100726434%3BT%3A29598573",
+    "value": "100715051%3BT%3A29598629",
     "domain": ".facebook.com",
     "path": "/",
-    "expires": 1807450385,
+    "expires": 1807453758,
     "httpOnly": false,
     "secure": true,
     "sameSite": "Strict"
   },
   {
     "name": "wl_cbv",
-    "value": "v2%3Bclient_version%3A3140%3Btimestamp%3A1775914384",
+    "value": "v2%3Bclient_version%3A3140%3Btimestamp%3A1775917757",
     "domain": ".facebook.com",
     "path": "/",
-    "expires": 1783690389,
+    "expires": 1783693762,
     "httpOnly": false,
     "secure": true
   }
